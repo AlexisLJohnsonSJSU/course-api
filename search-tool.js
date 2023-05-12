@@ -16,7 +16,19 @@ var search = () => {
   
   link.href=apiURL(searchText.value,lengthMap[searchLength.value])
   console.log(link.href);
-	
+  
+  fetch(apiURL(searchText.value,lengthMap[searchLength.value]))
+  .then(response => {
+    if (response.ok) {
+      response.json().then(data => {
+        console.log(data);
+        var poemHTML=data[0].lines.flatMap(line => `<p>${line}</p>`).join("");
+        document.getElementById("poem-lines").append(poemHTML);
+/*         console.log(poemHTML); */
+      });
+    } else console.log('Network response was not ok.');
+  });
+  
   return 
 }
 search();

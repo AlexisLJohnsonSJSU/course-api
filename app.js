@@ -21,35 +21,49 @@ var clearPoem = (poemContainer) => {
 
 /* https://poetrydb.org/lines,linecount,poemcount/desire;14;1 */
 var search = () => {
-  
-  //link.href=apiURL(searchText.value,lengthMap[searchLength.value])
-  
-  fetch(apiURL(searchText.value,lengthMap[searchLength.value]))
-  .then(response => {
-    if (response.ok) {
-      response.json().then(data => {
-				var paragraphs = document.getElementById("poem-lines");
-				clearPoem(document.getElementById("poem-lines"));
-				if(data[0] !== undefined){
-        	  title.innerHTML = data[0].title; 
-            author.innerHTML = `<span>by </span>${data[0].author}`; 
-            data[0].lines.forEach( item => {
-              var child = document.createElement("p");
-              child.textContent = item;
-              paragraphs.appendChild(child);
-              document.getElementById("source-link").style.visibility = "visible";
-            });        
-          } else {
-            	var child = document.createElement("p");
-              child.textContent = "No results";
-              paragraphs.appendChild(child);
-          }
-      });
-    } else console.log('Network response was not ok.');
-  });
-  
+  if (searchText.value.length>1){
+    link.href=apiURL(searchText.value,lengthMap[searchLength.value])
+    
+    fetch(apiURL(searchText.value,lengthMap[searchLength.value]))
+    .then(response => {
+      if (response.ok) {
+        response.json().then(data => {
+          var paragraphs = document.getElementById("poem-lines");
+          clearPoem(document.getElementById("poem-lines"));
+          document.getElementById("app").classList.remove("no-results");
+          if(data[0] !== undefined){
+              title.innerHTML = data[0].title; 
+              author.innerHTML = `<span>by </span>${data[0].author}`; 
+              data[0].lines.forEach( item => {
+                var child = document.createElement("p");
+                child.textContent = item;
+                paragraphs.appendChild(child);
+                document.getElementById("poem-section").style.display = "block";
+                document.getElementById("search-form").style.display = "none";
+  //              document.getElementById("source-link").style.visibility = "visible";
+              });        
+            } else {
+                document.getElementById("poem-section").style.display = "block";
+                var child = document.createElement("p");
+                child.textContent = "No results";
+                paragraphs.appendChild(child);
+                document.getElementById("app").classList.add("no-results");
+            }
+        });
+      } else console.log('Network response was not ok.');
+    });
+  }
   return 
 }
+
+var searchAgain = ()=> {
+  clearPoem(document.getElementById("poem-lines"));
+  document.getElementById("poem-section").style.display = "none";
+  document.getElementById("search-form").style.display = "block";
+}
+
+
+
 
 // link.style.visibility = "hidden";
 

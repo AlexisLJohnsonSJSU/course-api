@@ -3,27 +3,35 @@
   <head>
     <meta charset="utf-8" />
     <title>Poetry Discovery Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <link rel="stylesheet" type="text/css" href="poetry.css" />
-    
   </head>
   <body>
     <header id="nav">
       <ul>
-        <li>About</li>
-        <li>Help</li>
+        <li><a href="about.html" target="_self">About</a></li>
+        <li><a href="help.html" target="_self">Help</a></li>
       </ul>
     </header>
     <main id="app">
+      
+      <img src="logo.png" alt="Poetry Discovery Tool">
+        <!-- <h1>Poetry Discovery Tool</h1> -->
+  
       <section id="search-form">
 
-        <h1>Poetry Discovery Tool</h1>
-
+        <h2>Welcome curious reader! Please use the search fields below
+          for a poem recommendation that fits your topic of interest
+          and time available to read.</h2>
         
-        <h2>What topic interests you today?</h2>
+        <h3>What topic interests you today?</h3>
         <label for="">Required</label>
-        <input id="search-text" type="text" placeholder="Focus: One topic only" value="flowers">
+        <input id="search-text" type="text" placeholder="Focus: One topic only" value="">
       
-        <h2>How much time do you have?</h2>
+        <h3>How much time do you have?</h3>
       
         <label for="">Required</label>
       
@@ -42,9 +50,10 @@
         <label id="author"></label>
         <div id="poem-lines"></div>
         <a id="source-link" href="" target="_blank">API Source</a>
+        <button id="back-btn" onclick="searchAgain()">Discover Another Poem</button>
       </section>
     
-      <section class="ux-notes">
+      <!-- <section class="ux-notes">
         <div class="ux-note">
           <p>User Experience Note</p>
           <p>This is the landing page of the fre lorem ipsum deloret sum</p>
@@ -53,7 +62,7 @@
           <p>User Experience Note</p>
           <p>This is the landing page of the fre lorem ipsum deloret sum</p>
         </div>
-      </section>    
+      </section>     -->
     </main>    
     <script src="app.js"></script>
   </body>

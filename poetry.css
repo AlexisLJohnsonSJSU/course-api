@@ -1,11 +1,89 @@
+
+body main#app, body header#nav, h3, h2, p, li, a {
+    font-family: 'Lato', sans-serif;
+}
+header#nav {
+    /* background: #e5e5e5; */
+    margin: 0 auto;
+    padding: 0;
+}
+main#app {
+    padding: 0;
+}
+
+header#nav ul {
+    text-align: right;
+    padding: 1rem 2rem;
+}
+
+header#nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0rem 1rem;
+}
+
 label {
     font-style: italic;
     color: #777;
 }
 #poem-lines {
-    margin: 1rem 0rem;
+    margin: 1rem 0rem 2.4rem 0rem;
 }
 p {
     line-height: 1em;
     margin: 0.5em 0em;
+}
+main {
+    width: 80%;
+    max-width: 41rem;
+    margin: auto;
+}
+
+img {
+    display: block;
+    margin: auto;
+    margin-bottom: 2rem;
+    width: 40%;
+}
+
+input#search-text {--form-element-placeholder-color: gainsboro;
+}
+
+body main h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+#search-form input, #search-form select {
+    margin-bottom: 2.5rem;
+    max-width: 12rem;
+}
+
+#search-form button, #poem-section button {
+    max-width: 12rem;
+    margin: auto;
+    font-size: .8rem;
+    padding: .8rem .5rem;
+}
+#source-link {
+    display: none;
+}
+
+section#poem-section {
+    display: none;
+}
+main.no-results  #back-btn{
+    visibility: hidden;
+}
+
+h2#poem-title {
+    margin-bottom: 1.2rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+body {
 }

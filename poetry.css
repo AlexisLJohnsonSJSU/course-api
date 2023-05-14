@@ -1,2 +1,11 @@
-<style type="text/css">
-</style>
+label {
+    font-style: italic;
+    color: #777;
+}
+#poem-lines {
+    margin: 1rem 0rem;
+}
+p {
+    line-height: 1em;
+    margin: 0.5em 0em;
+}

@@ -2,50 +2,59 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-          <title>Poetry Discovery Tool</title>
-  
-    <!-- Insert poetry.css here (https://gist.github.com/2585089 -->
-    
-    <!-- Insert poetry.js here (https://gist.github.com/2585071 -->
+    <title>Poetry Discovery Tool</title>
+    <link rel="stylesheet" type="text/css" href="poetry.css" />
     
   </head>
   <body>
-    <div id="nav">
+    <header id="nav">
       <ul>
         <li>About</li>
         <li>Help</li>
       </ul>
-    </div>
-    <div id="app">
+    </header>
+    <main id="app">
       <section id="search-form">
 
-      <h1>Poetry Discovery Tool</h1>
-      <form id="query">
+        <h1>Poetry Discovery Tool</h1>
+
+        
         <h2>What topic interests you today?</h2>
         <label for="">Required</label>
-        <input type="text" placeholder="Focus: One topic only">
+        <input id="search-text" type="text" placeholder="Focus: One topic only" value="flowers">
+      
         <h2>How much time do you have?</h2>
+      
         <label for="">Required</label>
-        <select>
-          <option>Short</option>
-          <option>Medium</option>
-          <option>Long</option>
+      
+        <select id="search-length">
+          <option value="short">short</option>
+          <option value="medium">medium</option>
+          <option value="long">long</option>
         </select>
-        <div class="center">
-          <input type="submit" title="submit">
+
+        <button onclick="search()">Search</button>
+
+      </section>
+
+      <section id="poem-section">
+        <h2 id="poem-title"></h2>
+        <label id="author"></label>
+        <div id="poem-lines"></div>
+        <a id="source-link" href="" target="_blank">API Source</a>
+      </section>
+    
+      <section class="ux-notes">
+        <div class="ux-note">
+          <p>User Experience Note</p>
+          <p>This is the landing page of the fre lorem ipsum deloret sum</p>
         </div>
-      </form>
-    </section>
-    <section class="ux-notes">
-      <div class="ux-note">
-        <p>User Experience Note</p>
-        <p>This is the landing page of the fre lorem ipsum deloret sum</p>
-      </div>
-      <div class="ux-note">
-        <p>User Experience Note</p>
-        <p>This is the landing page of the fre lorem ipsum deloret sum</p>
-      </div>
-    </section>    
-    </div>    
+        <div class="ux-note">
+          <p>User Experience Note</p>
+          <p>This is the landing page of the fre lorem ipsum deloret sum</p>
+        </div>
+      </section>    
+    </main>    
+    <script src="app.js"></script>
   </body>
 </html>

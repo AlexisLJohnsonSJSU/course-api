@@ -37,7 +37,7 @@ p {
 }
 main {
     width: 80%;
-    max-width: 41rem;
+    max-width: 25rem;
     margin: auto;
 }
 
@@ -45,7 +45,7 @@ img {
     display: block;
     margin: auto;
     margin-bottom: 2rem;
-    width: 40%;
+    width: 18rem;
 }
 
 input#search-text {--form-element-placeholder-color: gainsboro;
@@ -89,8 +89,9 @@ h2#poem-title {
 }
 
 h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
+    margin-bottom: 1.8rem;
 }
 
 body {
@@ -119,4 +120,7 @@ header ul a {
 header ul a:hover {
     /* color: #777; */
     text-decoration: rgb(242 101 6) wavy underline;
+}
+h2 span.not-so-bold {
+    font-weight: normal;
 }

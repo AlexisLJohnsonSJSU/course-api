@@ -29,10 +29,10 @@ label {
     font-size: .8rem;
 }
 #poem-lines {
-    margin: 1rem 0rem 2.4rem 0rem;
+    margin: 1rem 0rem 0rem 0rem;
 }
 p {
-    line-height: 1em;
+    line-height: 1.1em;
     margin: 0.5em 0em;
 }
 main {
@@ -144,6 +144,7 @@ span.terms, .more-orange {
 .poem-container {
     background-color: #f8f8f8;
     padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 #poem-section.no-results .poem-container {

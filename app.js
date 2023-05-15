@@ -42,10 +42,13 @@ var search = () => {
                 document.getElementById("search-form").style.display = "none";
                 document.getElementById("poem-section").classList.remove("no-results")
                 backBtn.textContent = "Discover Another Poem";
+                document.getElementById("results-label").style.display ="block";
+                document.getElementById("results-label").innerHTML = `Behold: a <span class="more-orange">${searchLength.value}</span> poem about <span class="more-orange">${searchText.value}</span>`;
                 
               });        
             } else {
                 document.getElementById("poem-section").style.display = "block";
+                document.getElementById("results-label").style.display ="none";
 
                 var result = document.createElement("p");
                 result.innerHTML = `Drat! We don't have a <span class="more-orange">${searchLength.value}</span> poem about <span class="more-orange">${searchText.value}</span>.`;

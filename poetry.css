@@ -140,3 +140,12 @@ span.terms, .more-orange {
     margin: 1.8rem auto;
     max-width: 59%;
 }
+
+.poem-container {
+    background-color: #f8f8f8;
+    padding: 1rem;
+}
+
+#poem-section.no-results .poem-container {
+    background: none;
+}

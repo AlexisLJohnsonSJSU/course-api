@@ -37,7 +37,7 @@ p {
 }
 main {
     width: 80%;
-    max-width: 25rem;
+    max-width: 27rem;
     margin: auto;
 }
 
@@ -110,7 +110,7 @@ div.center {
 }
 
 section#poem-section {
-    padding: 0rem 4rem;
+    padding: 0rem 1rem;
 }
 
 header ul a {

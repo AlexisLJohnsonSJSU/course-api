@@ -124,6 +124,19 @@ header ul a:hover, header ul a.active-page {
 h2 span.not-so-bold {
     font-weight: normal;
 }
-span.terms {
+span.terms, .more-orange {
     color: rgb(242 101 6);
+}
+#poem-section.no-results {
+    text-align: center;
+}
+#poem-section.no-results #back-btn{
+    background: #976dd0;
+    color: white;
+}
+#poem-section.no-results .help-message {
+    font-size: .8rem;
+    color: #444;
+    margin: 1.8rem auto;
+    max-width: 59%;
 }

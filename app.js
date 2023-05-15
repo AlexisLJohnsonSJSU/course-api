@@ -3,6 +3,7 @@ var searchLength = document.getElementById("search-length");
 var link = document.getElementById("source-link");
 var author = document.getElementById("author");
 var title = document.getElementById("poem-title");
+var backBtn = document.getElementById("back-btn");
 var lengthMap = {
 		short: 5, 
   	medium: 14, 
@@ -30,7 +31,6 @@ var search = () => {
         response.json().then(data => {
           var paragraphs = document.getElementById("poem-lines");
           clearPoem(document.getElementById("poem-lines"));
-          // document.getElementById("app").classList.remove("no-results");
           if(data[0] !== undefined){
               title.innerHTML = data[0].title; 
               author.innerHTML = `<span>by </span>${data[0].author}`; 
@@ -40,19 +40,30 @@ var search = () => {
                 paragraphs.appendChild(child);
                 document.getElementById("poem-section").style.display = "block";
                 document.getElementById("search-form").style.display = "none";
-  //              document.getElementById("source-link").style.visibility = "visible";
+                document.getElementById("poem-section").classList.remove("no-results")
+                backBtn.textContent = "Discover Another Poem";
+                
               });        
             } else {
                 document.getElementById("poem-section").style.display = "block";
-                var child = document.createElement("p");
-                child.textContent = "No results";
-                paragraphs.appendChild(child);
-                // document.getElementById("app").classList.add("no-results");
+
+                var result = document.createElement("p");
+                result.innerHTML = `Drat! We don't have a <span class="more-orange">${searchLength.value}</span> poem about <span class="more-orange">${searchText.value}</span>.`;
+                paragraphs.appendChild(result);
+
+                var message = document.createElement("p");
+                message.innerHTML = 'Click "Help" in the nav above for recommendations for successful searches.';
+                paragraphs.appendChild(message);
+                message.classList.add("help-message");
+
                 document.getElementById("poem-section").style.display = "block";
                 document.getElementById("search-form").style.display = "none";
+                document.getElementById("poem-section").classList.add("no-results")
+                backBtn.textContent = "Try Another Search";
+
             }
         });
-      } else console.log('Network response was not ok.');
+      } else console.log('Error: Network response was not ok.');
     });
   }
   return 
@@ -64,13 +75,5 @@ var searchAgain = ()=> {
   document.getElementById("search-form").style.display = "block";
   searchText.value = "";
 }
-
-
-
-
-// link.style.visibility = "hidden";
-
-
-/* search(); */
 
 

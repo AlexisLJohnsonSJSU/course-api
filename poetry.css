@@ -117,7 +117,7 @@ header ul a {
     color: #555;
 }
 
-header ul a:hover {
+header ul a:hover, header ul a.active-page {
     /* color: #777; */
     text-decoration: rgb(242 101 6) wavy underline;
 }

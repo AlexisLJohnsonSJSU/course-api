@@ -36,13 +36,13 @@
         <label for="">Required</label>
       
         <select id="search-length">
-          <option value="short">short</option>
-          <option value="medium">medium</option>
-          <option value="long">long</option>
+          <option value="short">Short! &lt; 30 sec read</option>
+          <option value="medium">Medium 30-90 sec read</option>
+          <option value="long">Long &gt; 90 sec read</option>
         </select>
-
-        <button onclick="search()">Search</button>
-
+        <div class="center">
+          <button onclick="search()">Search</button>
+        </div>
       </section>
 
       <section id="poem-section">
@@ -50,7 +50,9 @@
         <label id="author"></label>
         <div id="poem-lines"></div>
         <a id="source-link" href="" target="_blank">API Source</a>
-        <button id="back-btn" onclick="searchAgain()">Discover Another Poem</button>
+        <div class="center">
+          <button id="back-btn" onclick="searchAgain()">Discover Another Poem</button>
+        </div>
       </section>
     
       <!-- <section class="ux-notes">

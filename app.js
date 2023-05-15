@@ -30,7 +30,7 @@ var search = () => {
         response.json().then(data => {
           var paragraphs = document.getElementById("poem-lines");
           clearPoem(document.getElementById("poem-lines"));
-          document.getElementById("app").classList.remove("no-results");
+          // document.getElementById("app").classList.remove("no-results");
           if(data[0] !== undefined){
               title.innerHTML = data[0].title; 
               author.innerHTML = `<span>by </span>${data[0].author}`; 
@@ -47,7 +47,9 @@ var search = () => {
                 var child = document.createElement("p");
                 child.textContent = "No results";
                 paragraphs.appendChild(child);
-                document.getElementById("app").classList.add("no-results");
+                // document.getElementById("app").classList.add("no-results");
+                document.getElementById("poem-section").style.display = "block";
+                document.getElementById("search-form").style.display = "none";
             }
         });
       } else console.log('Network response was not ok.');
@@ -60,6 +62,7 @@ var searchAgain = ()=> {
   clearPoem(document.getElementById("poem-lines"));
   document.getElementById("poem-section").style.display = "none";
   document.getElementById("search-form").style.display = "block";
+  searchText.value = "";
 }
 
 

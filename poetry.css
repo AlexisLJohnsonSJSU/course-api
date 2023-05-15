@@ -14,6 +14,7 @@ main#app {
 header#nav ul {
     text-align: right;
     padding: 1rem 2rem;
+    /* color: #777; */
 }
 
 header#nav ul li {
@@ -24,7 +25,8 @@ header#nav ul li {
 
 label {
     font-style: italic;
-    color: #777;
+    color: #ff8000;
+    font-size: .8rem;
 }
 #poem-lines {
     margin: 1rem 0rem 2.4rem 0rem;
@@ -50,21 +52,26 @@ input#search-text {--form-element-placeholder-color: gainsboro;
 }
 
 body main h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
     font-weight: 400;
 }
 
 #search-form input, #search-form select {
     margin-bottom: 2.5rem;
-    max-width: 12rem;
+    max-width: 16rem;
+    padding: .5rem;
+    height: 2.5rem;
+    font-size: .8rem;
 }
 
 #search-form button, #poem-section button {
-    max-width: 12rem;
-    margin: auto;
+    display: inline-block;
+    width: auto;
+    /* max-width: 11rem; */
+    /* margin: auto; */
     font-size: .8rem;
-    padding: .8rem .5rem;
+    padding: .6rem 1.2rem;
 }
 #source-link {
     display: none;
@@ -82,8 +89,34 @@ h2#poem-title {
 }
 
 h2 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 body {
+}
+
+button {
+    background: #444;
+}
+
+button:hover {
+    background: #777;
+}
+
+div.center {
+    text-align: center;
+}
+
+section#poem-section {
+    padding: 0rem 4rem;
+}
+
+header ul a {
+    color: #555;
+}
+
+header ul a:hover {
+    /* color: #777; */
+    text-decoration: rgb(242 101 6) wavy underline;
 }

@@ -124,3 +124,6 @@ header ul a:hover {
 h2 span.not-so-bold {
     font-weight: normal;
 }
+span.terms {
+    color: rgb(242 101 6);
+}
